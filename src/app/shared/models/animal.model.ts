@@ -4,6 +4,7 @@ export interface Animal {
   name: string;
   scientificName: string;
   order: string;
+  orderCommonName: string;
   habitat: string[];
   size: { min: number; max: number; unit: string };
   weight: { min: number; max: number; unit: string };
