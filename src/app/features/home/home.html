@@ -1,7 +1,9 @@
 <h1>Specium</h1>
 <h2>The Encyclopedia of Living Species</h2>
 <ul>
-  @for (class of classes; track class.name) {
-    <li>{{ class.name }}</li>
+  @for (animalClass of classes; track animalClass.id) {
+    <li>
+      <a [routerLink]="['/class', animalClass.id]">{{ animalClass.name }}</a>
+    </li>
   }
 </ul>
