@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AnimalService } from '../../core/services/animal';
 
 @Component({
   selector: 'app-home',
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {}
+export class Home {
+  animalService = inject(AnimalService);
+  classes = this.animalService.getClasses();
+}
