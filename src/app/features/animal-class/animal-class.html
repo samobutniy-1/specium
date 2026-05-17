@@ -1,1 +1,6 @@
-<p>animal-class works!</p>
+<h2>{{ currentClass?.name }}</h2>
+<ul>
+  @for (animal of animals; track animal.id) {
+    <li>{{ animal.name }}</li>
+  }
+</ul>
