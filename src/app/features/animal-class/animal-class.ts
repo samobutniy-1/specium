@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AnimalService } from '../../core/services/animal';
+import { AnimalCard } from '../../shared/components/animal-card/animal-card';
 
 @Component({
   selector: 'app-animal-class',
-  imports: [],
+  imports: [AnimalCard],
   templateUrl: './animal-class.html',
   styleUrl: './animal-class.css',
 })

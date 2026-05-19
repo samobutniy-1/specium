@@ -1,6 +1,6 @@
 <h2>{{ currentClass?.name }}</h2>
-<ul>
+<div>
   @for (animal of animals; track animal.id) {
-    <li>{{ animal.name }}</li>
+    <app-animal-card [animal]="animal" />
   }
-</ul>
+</div>
