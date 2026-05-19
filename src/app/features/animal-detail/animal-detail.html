@@ -1,1 +1,17 @@
-<p>animal-detail works!</p>
+<div>
+  <h1>{{ animal?.name }}</h1>
+  <p>{{ animal?.scientificName }}</p>
+  <p>{{ animal?.orderCommonName }} • {{ animal?.order }}</p>
+
+  <p>{{ animal?.shortDescription }}</p>
+  <p>{{ animal?.fullDescription }}</p>
+
+  <ul>
+    <li>Diet: {{ animal?.diet }}</li>
+    <li>Conservation Status: {{ animal?.conservationStatus }}</li>
+    <li>Lifespan: {{ animal?.lifespan?.min }}–{{ animal?.lifespan?.max }} years</li>
+    <li>Size: {{ animal?.size?.min }}–{{ animal?.size?.max }} {{ animal?.size?.unit }}</li>
+    <li>Weight: {{ animal?.weight?.min }}–{{ animal?.weight?.max }} {{ animal?.weight?.unit }}</li>
+    <li>Habitat: {{ animal?.habitat?.join(', ') }}</li>
+  </ul>
+</div>

@@ -2,4 +2,5 @@
   <h3>{{ animal()?.name }}</h3>
   <p>{{ animal()?.scientificName }}</p>
   <p>{{ animal()?.shortDescription }}</p>
+  <a [routerLink]="['/animal', animal()?.id]">Learn more</a>
 </div>
