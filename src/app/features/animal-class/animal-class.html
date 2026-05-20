@@ -1,6 +1,10 @@
 <h2>{{ currentClass?.name }}</h2>
 <div>
-  @for (animal of animals; track animal.id) {
+  <button (click)="selectedOrder.set(null)">All</button>
+  @for (order of orders; track order) {
+    <button (click)="selectedOrder.set(order)">{{ order }}</button>
+  }
+  @for (animal of filteredAnimals(); track animal.id) {
     <app-animal-card [animal]="animal" />
   }
 </div>
