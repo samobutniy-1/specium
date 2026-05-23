@@ -2,10 +2,11 @@ import { Component, inject, signal, computed } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AnimalService } from '../../core/services/animal';
 import { AnimalCard } from '../../shared/components/animal-card/animal-card';
+import { BackButton } from '../../shared/components/back-button/back-button';
 
 @Component({
   selector: 'app-animal-class',
-  imports: [AnimalCard],
+  imports: [AnimalCard, BackButton],
   templateUrl: './animal-class.html',
   styleUrl: './animal-class.css',
 })
