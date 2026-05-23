@@ -1,11 +1,32 @@
-<app-back-button />
-<h2>{{ currentClass?.name }}</h2>
-<div>
-  <button (click)="selectedOrder.set(null)">All</button>
-  @for (order of orders; track order) {
-    <button (click)="selectedOrder.set(order)">{{ order }}</button>
-  }
-  @for (animal of filteredAnimals(); track animal.id) {
-    <app-animal-card [animal]="animal" />
-  }
+<div
+  class="min-h-screen p-8 pt-20"
+  [style.backgroundImage]="'url(' + currentClass?.backgroundUrl + ')'"
+  style="background-size: cover; background-position: center; background-attachment: fixed"
+>
+  <app-back-button />
+
+  <h2 class="text-white text-4xl font-bold mt-4 mb-6">{{ currentClass?.name }}</h2>
+
+  <div class="flex gap-3 mb-8 flex-wrap">
+    <button
+      (click)="selectedOrder.set(null)"
+      class="px-4 py-2 rounded-full border border-white/20 text-white/80 backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300"
+    >
+      All
+    </button>
+    @for (order of orders; track order) {
+      <button
+        (click)="selectedOrder.set(order)"
+        class="px-4 py-2 rounded-full border border-white/20 text-white/80 backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300"
+      >
+        {{ order }}
+      </button>
+    }
+  </div>
+
+  <div class="flex flex-wrap gap-6 justify-center items-stretch">
+    @for (animal of filteredAnimals(); track animal.id) {
+      <app-animal-card [animal]="animal" />
+    }
+  </div>
 </div>

@@ -1,6 +1,13 @@
-<div>
-  <h3>{{ animal()?.name }}</h3>
-  <p>{{ animal()?.scientificName }}</p>
-  <p>{{ animal()?.shortDescription }}</p>
-  <a [routerLink]="['/animal', animal()?.id]">Learn more</a>
+<div
+  class="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-5 flex flex-col gap-3 w-72 h-full"
+>
+  <h3 class="text-white text-xl font-bold">{{ animal()?.name }}</h3>
+  <p class="text-white/50 text-sm italic">{{ animal()?.scientificName }}</p>
+  <p class="text-white/80 text-sm leading-relaxed">{{ animal()?.shortDescription }}</p>
+  <a
+    [routerLink]="['/animal', animal()?.id]"
+    class="mt-auto text-center text-sm text-white/90 border border-white/20 rounded-xl py-2 px-4 hover:bg-white/10 transition-all duration-300"
+  >
+    Learn more
+  </a>
 </div>

@@ -1,24 +1,51 @@
-<app-back-button />
-<article>
-  <h1>{{ animal?.name }}</h1>
-  <p>{{ animal?.scientificName }}</p>
-  <p>{{ animal?.orderCommonName }} • {{ animal?.order }}</p>
+<div
+  class="min-h-screen p-8 pt-20"
+  [style.backgroundImage]="'url(' + currentClass?.backgroundUrl + ')'"
+  style="background-size: cover; background-position: center; background-attachment: fixed"
+>
+  <app-back-button />
 
-  <p>{{ animal?.shortDescription }}</p>
-  <p>{{ animal?.fullDescription }}</p>
+  <article
+    class="max-w-3xl mx-auto mt-6 backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-8"
+  >
+    <h1 class="text-white text-4xl font-bold mb-1">{{ animal?.name }}</h1>
+    <p class="text-white/50 text-lg italic mb-1">{{ animal?.scientificName }}</p>
+    <p class="text-white/40 text-sm mb-6">{{ animal?.orderCommonName }} • {{ animal?.order }}</p>
 
-  <dl>
-    <dt>Diet:</dt>
-    <dd>{{ animal?.diet }}</dd>
-    <dt>Conservation Status:</dt>
-    <dd>{{ animal?.conservationStatus }}</dd>
-    <dt>Lifespan:</dt>
-    <dd>{{ animal?.lifespan?.min }}–{{ animal?.lifespan?.max }} years</dd>
-    <dt>Size:</dt>
-    <dd>{{ animal?.size?.min }}–{{ animal?.size?.max }} {{ animal?.size?.unit }}</dd>
-    <dt>Weight:</dt>
-    <dd>{{ animal?.weight?.min }}–{{ animal?.weight?.max }} {{ animal?.weight?.unit }}</dd>
-    <dt>Habitat:</dt>
-    <dd>{{ animal?.habitat?.join(', ') }}</dd>
-  </dl>
-</article>
+    <p class="text-white/80 text-base leading-relaxed mb-3">{{ animal?.shortDescription }}</p>
+    <p class="text-white/70 text-sm leading-relaxed mb-8">{{ animal?.fullDescription }}</p>
+
+    <dl class="grid grid-cols-2 gap-4">
+      <div class="bg-white/5 rounded-xl p-4">
+        <dt class="text-white/40 text-xs mb-1">Diet</dt>
+        <dd class="text-white text-sm font-medium">{{ animal?.diet }}</dd>
+      </div>
+      <div class="bg-white/5 rounded-xl p-4">
+        <dt class="text-white/40 text-xs mb-1">Conservation Status</dt>
+        <dd class="text-white text-sm font-medium">{{ animal?.conservationStatus }}</dd>
+      </div>
+      <div class="bg-white/5 rounded-xl p-4">
+        <dt class="text-white/40 text-xs mb-1">Lifespan</dt>
+        <dd class="text-white text-sm font-medium">
+          {{ animal?.lifespan?.min }}–{{ animal?.lifespan?.max }} years
+        </dd>
+      </div>
+      <div class="bg-white/5 rounded-xl p-4">
+        <dt class="text-white/40 text-xs mb-1">Size</dt>
+        <dd class="text-white text-sm font-medium">
+          {{ animal?.size?.min }}–{{ animal?.size?.max }} {{ animal?.size?.unit }}
+        </dd>
+      </div>
+      <div class="bg-white/5 rounded-xl p-4">
+        <dt class="text-white/40 text-xs mb-1">Weight</dt>
+        <dd class="text-white text-sm font-medium">
+          {{ animal?.weight?.min }}–{{ animal?.weight?.max }} {{ animal?.weight?.unit }}
+        </dd>
+      </div>
+      <div class="bg-white/5 rounded-xl p-4">
+        <dt class="text-white/40 text-xs mb-1">Habitat</dt>
+        <dd class="text-white text-sm font-medium">{{ animal?.habitat?.join(', ') }}</dd>
+      </div>
+    </dl>
+  </article>
+</div>

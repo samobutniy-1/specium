@@ -14,4 +14,5 @@ export class AnimalDetail {
   route = inject(ActivatedRoute);
   animalId = this.route.snapshot.paramMap.get('id');
   animal = this.animalService.getAnimalById(this.animalId!);
+  currentClass = this.animalService.getClasses().find((c) => c.id === this.animal?.classId);
 }

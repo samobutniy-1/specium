@@ -21,4 +21,5 @@ export interface AnimalClass {
   name: string;
   description: string;
   imageUrl: string;
+  backgroundUrl: string;
 }
