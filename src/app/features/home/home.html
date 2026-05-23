@@ -1,9 +1,11 @@
 <h1>Specium</h1>
 <h2>The Encyclopedia of Living Species</h2>
-<ul>
+<section>
   @for (animalClass of classes; track animalClass.id) {
-    <li>
-      <a [routerLink]="['/class', animalClass.id]">{{ animalClass.name }}</a>
-    </li>
+    <article>
+      <h3>{{ animalClass.name }}</h3>
+      <p>{{ animalClass.description }}</p>
+      <a [routerLink]="['/class', animalClass.id]">Explore</a>
+    </article>
   }
-</ul>
+</section>
