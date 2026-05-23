@@ -1,4 +1,4 @@
-<div>
+<article>
   <h1>{{ animal?.name }}</h1>
   <p>{{ animal?.scientificName }}</p>
   <p>{{ animal?.orderCommonName }} • {{ animal?.order }}</p>
@@ -6,12 +6,18 @@
   <p>{{ animal?.shortDescription }}</p>
   <p>{{ animal?.fullDescription }}</p>
 
-  <ul>
-    <li>Diet: {{ animal?.diet }}</li>
-    <li>Conservation Status: {{ animal?.conservationStatus }}</li>
-    <li>Lifespan: {{ animal?.lifespan?.min }}–{{ animal?.lifespan?.max }} years</li>
-    <li>Size: {{ animal?.size?.min }}–{{ animal?.size?.max }} {{ animal?.size?.unit }}</li>
-    <li>Weight: {{ animal?.weight?.min }}–{{ animal?.weight?.max }} {{ animal?.weight?.unit }}</li>
-    <li>Habitat: {{ animal?.habitat?.join(', ') }}</li>
-  </ul>
-</div>
+  <dl>
+    <dt>Diet:</dt>
+    <dd>{{ animal?.diet }}</dd>
+    <dt>Conservation Status:</dt>
+    <dd>{{ animal?.conservationStatus }}</dd>
+    <dt>Lifespan:</dt>
+    <dd>{{ animal?.lifespan?.min }}–{{ animal?.lifespan?.max }} years</dd>
+    <dt>Size:</dt>
+    <dd>{{ animal?.size?.min }}–{{ animal?.size?.max }} {{ animal?.size?.unit }}</dd>
+    <dt>Weight:</dt>
+    <dd>{{ animal?.weight?.min }}–{{ animal?.weight?.max }} {{ animal?.weight?.unit }}</dd>
+    <dt>Habitat:</dt>
+    <dd>{{ animal?.habitat?.join(', ') }}</dd>
+  </dl>
+</article>
